@@ -5,4 +5,6 @@ class User < ApplicationRecord
     has_many :categories, through: :medications
 
     has_secure_password
+
+    validates :username, uniquenee: true, presence: true
 end
