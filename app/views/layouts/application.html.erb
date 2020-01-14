@@ -10,7 +10,8 @@
   </head>
 
   <div>
-    <%= link_to 'Log Out', logout_path, method: :delete %> 
+    <%= link_to 'Log Out', logout_path, method: :delete %>
+    <%= link_to 'Add Medication', new_medication_path%> 
   </div>
   <body>
     <%= yield %>

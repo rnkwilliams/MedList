@@ -1,0 +1,24 @@
+<h1>Add a New Medication</h1
+
+<%= form_for @medication do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :dosage %>
+    <%= f.number_field :dosage %><br>
+
+    <%= f.label :units%>
+    <%= f.text_field :units %><br>
+
+    <%= f.label :frequency %>
+    <%= f.text_field :frequency %><br>
+
+    <%= f.label :times_per_day %>
+    <%= f.number_field :times_per_day %><br>
+
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date %>
+    <br>
+    
+    <%= f.submit 'Create Medication' %>
+<% end %>
