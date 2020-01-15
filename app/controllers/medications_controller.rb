@@ -3,7 +3,7 @@ class MedicationsController < ApplicationController
     def index
         @medications = Medication.all
     end
-    
+
     def new
         @medication = Medication.new
         @medication.build_category
