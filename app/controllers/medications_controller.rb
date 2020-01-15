@@ -1,4 +1,9 @@
 class MedicationsController < ApplicationController
+
+    def index
+        @medications = Medication.all
+    end
+    
     def new
         @medication = Medication.new
         @medication.build_category
@@ -15,6 +20,7 @@ class MedicationsController < ApplicationController
     end
 
     def show
+        @medication = Medication.find_by_id(params[:id])
     end
 
     private
