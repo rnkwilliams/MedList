@@ -1,13 +1,13 @@
-<h1>Add a New Medication</h1
+<h1>Add a New Medication</h1>
 
 <%= form_for @medication do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br>
 
     <%= f.label :dosage %>
-    <%= f.number_field :dosage %><br>
+    <%= f.number_field :dosage %>
 
-    <%= f.label :units%>
+    <%= f.label :units %>
     <%= f.text_field :units %><br>
 
     <%= f.label :frequency %>
@@ -26,13 +26,12 @@
     </div>
 
     <p> Or create a new Category: </p>
-    <div>
+    
     <%= f.fields_for :category do |c| %>
         <%= c.label :name %>
         <%= c.text_field :name %>
-        <% end %>
-    </div>
-    <br>
+    <% end %>
+    <br><br>
     <%= f.submit 'Create Medication' %>
     
 <% end %>

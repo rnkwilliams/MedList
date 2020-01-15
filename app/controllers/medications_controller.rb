@@ -6,11 +6,15 @@ class MedicationsController < ApplicationController
 
     def create
         @medication = Medication.new(medication_params)
+        @medication.user_id = session[:user_id]
         if @medication.save
             redirect_to medication_path(@medication)
         else
             render :new
         end
+    end
+
+    def show
     end
 
     private
