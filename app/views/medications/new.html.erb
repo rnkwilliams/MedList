@@ -18,7 +18,21 @@
 
     <%= f.label :start_date %>
     <%= f.text_field :start_date %>
+    <br><br>
+
+    <p> Select a Category that already exists: </p>
+    <div>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+    </div>
+
+    <p> Or create a new Category: </p>
+    <div>
+    <%= f.fields_for :category do |c| %>
+        <%= c.label :name %>
+        <%= c.text_field :name %>
+        <% end %>
+    </div>
     <br>
-    
     <%= f.submit 'Create Medication' %>
+    
 <% end %>
