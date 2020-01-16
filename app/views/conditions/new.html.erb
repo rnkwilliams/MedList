@@ -1,3 +1,5 @@
+<h1>Add a Condition for <%= @condition.medication.name %></h1>
+
 <%= form_for @condition do |f| %>
     <p> Select a Condition that already exists: </p>
     <div>
@@ -10,13 +12,13 @@
         <%= c.label :name %>
         <%= c.text_field :name %>
     <% end %>
-
+    <br><br>
     <%= f.label :notes %>
     <%= f.text_area :notes %><br>
 
     <%= f.hidden_field :medication_id %>
     <br><br>
-    
+
     <%= f.submit 'Create Condition' %>
     
 <% end %>
