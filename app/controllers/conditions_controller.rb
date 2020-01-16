@@ -14,7 +14,7 @@ class ConditionsController < ApplicationController
     end
 
     def show
-        @condition = Condition.find_by_id()
+        @condition = Condition.find_by_id(params[:id])
     end
 
     def index
