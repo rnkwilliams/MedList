@@ -1,0 +1,22 @@
+<%= form_for @condition do |f| %>
+    <p> Select a Condition that already exists: </p>
+    <div>
+    <%= f.collection_select :medication_id, Condition.all, :id, :name %>
+    </div>
+
+    <p> Or create a new Condition: </p>
+    
+    <%= f.fields_for :condition do |c| %>
+        <%= c.label :name %>
+        <%= c.text_field :name %>
+    <% end %>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %><br>
+
+    <%= f.hidden_field :medication_id %>
+    <br><br>
+    
+    <%= f.submit 'Create Condition' %>
+    
+<% end %>
