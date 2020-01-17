@@ -5,7 +5,7 @@ class ConditionsController < ApplicationController
     end
 
     def create
-        @condition = Condition.new(condition_params)
+        @condition = current_user.conditions.build(condition_params)
         if @condition.save
             redirect_to condition_path(@condition)
         else
@@ -23,6 +23,6 @@ class ConditionsController < ApplicationController
     private
 
     def condition_params
-       params.require(:condition).permit(:name, :notes, :medication_id) 
+       params.require(:condition).permit(:name, :notes, :medication_id)
     end
 end
