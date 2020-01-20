@@ -1,2 +1,7 @@
 <h1>All Conditions</h1>
 
+<ul>
+<% @conditions.each do |c| %>
+    <li><%= c.medication.name %>: <%= c.name %> - <%= c.notes %></li><br>
+<% end %>
+</ul>
