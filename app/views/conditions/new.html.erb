@@ -8,10 +8,9 @@
 
     <p> Or create a new Condition: </p>
     
-    <%= f.fields_for :condition do |c| %>
-        <%= c.label :name %>
-        <%= c.text_field :name %>
-    <% end %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
     <br><br>
     <%= f.label :notes %>
     <%= f.text_area :notes %><br>
