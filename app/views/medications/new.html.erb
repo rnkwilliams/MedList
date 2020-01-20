@@ -1,5 +1,7 @@
 <h1>Add a New Medication</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @medication} %>
+
 <%= form_for @medication do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br>
