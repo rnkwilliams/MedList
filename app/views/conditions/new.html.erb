@@ -5,17 +5,12 @@
 
 
 <%= form_for @condition do |f| %>
-    <p> Select a Condition that already exists: </p>
     <div>
-    <%= f.collection_select :medication_id, Condition.all, :id, :name %>
-    </div>
-
-    <p> Or create a new Condition: </p>
-    
     <%= f.label :name %>
     <%= f.text_field :name %>
-    
+    </div>
     <br><br>
+    
     <%= f.label :notes %>
     <%= f.text_area :notes %><br>
 
