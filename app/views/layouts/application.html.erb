@@ -12,6 +12,9 @@
   <div>
     <%= link_to 'Log Out', logout_path, method: :delete %>
     <%= link_to 'Add Medication', new_medication_path %> 
+    <%= link_to 'All Medications', medications_path %>
+    <%= link_to 'Add a Condition', new_condition_path %>
+    <%= link_to 'All Conditions', conditions_path %>
   </div>
   <body>
     <%= yield %>

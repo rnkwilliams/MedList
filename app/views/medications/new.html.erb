@@ -24,7 +24,7 @@
 
     <p> Select a Category that already exists: </p>
     <div>
-    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+    <%= f.collection_select :category_id, Category.alpha, :id, :name, prompt: true %>
     </div>
 
     <p> Or create a new Category: </p>

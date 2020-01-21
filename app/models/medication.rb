@@ -14,10 +14,11 @@ class Medication < ApplicationRecord
 
   accepts_nested_attributes_for :category
 
+  
   def not_a_duplicate
     if Medication.find_by(name: name, category_id: category_id)
       errors.add(:name, "has already been added for that category")
     end
   end
-  
+
 end

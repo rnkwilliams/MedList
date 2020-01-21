@@ -1,7 +1,10 @@
 class ConditionsController < ApplicationController
     def new
-        @medication = Medication.find_by_id(params[:medication_id])
-        @condition = @medication.conditions.build
+        if @medication = Medication.find_by_id(params[:medication_id])
+            @condition = @medication.conditions.build
+        else
+            @condition = Condition.new
+        end
     end
 
     def create
