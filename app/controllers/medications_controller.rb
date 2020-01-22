@@ -26,6 +26,6 @@ class MedicationsController < ApplicationController
     private
 
     def medication_params
-        params.require(:medication).permit(:name, :dosage, :units, :frequency,           :times_per_day, :start_date, :category_id, category_attributes: [:name])
+        params.require(:medication).permit(:name, :dosage, :units, :frequency, :times_per_day, :start_date, :category_id, category_attributes: [:name])
     end
 end

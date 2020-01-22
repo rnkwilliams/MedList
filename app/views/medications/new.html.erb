@@ -13,7 +13,7 @@
     <%= f.text_field :units %><br>
 
     <%= f.label :frequency %>
-    <%= f.text_field :frequency %><br>
+    <%= f.select(:frequency, ["As Needed", "Daily", "Every Other Day", "Specific Days"], prompt: true) %><br>
 
     <%= f.label :times_per_day %>
     <%= f.number_field :times_per_day, min:1, max:10 %><br>

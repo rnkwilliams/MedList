@@ -3,5 +3,4 @@ class Condition < ApplicationRecord
   belongs_to :medication
 
   validates :name, presence: true
-  
 end

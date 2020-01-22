@@ -12,9 +12,11 @@ class Medication < ApplicationRecord
   validates :start_date, presence: true
   validate :not_a_duplicate
 
-  accepts_nested_attributes_for :category
+  def category_attributes=(attributes)
+    self.category = Category.find_or_create_by(attributes) if !attributes['name'].empty?
+    self.category
+  end
 
-  
   def not_a_duplicate
     if Medication.find_by(name: name, category_id: category_id)
       errors.add(:name, "has already been added for that category")
