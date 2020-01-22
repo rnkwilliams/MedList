@@ -1,4 +1,5 @@
 class MedicationsController < ApplicationController
+    before_action :set_medication, only: [:show, :edit, :update, :destroy]
 
     def index
         @medications = Medication.all
@@ -20,15 +21,12 @@ class MedicationsController < ApplicationController
     end
 
     def show
-        @medication = Medication.find_by_id(params[:id])
     end
 
     def edit
-        @medication = Medication.find_by_id(params[:id])
     end
 
     def update
-        @medication = Medication.find_by_id(params[:id])
         if @medication.update(medication_params)
             redirect_to medication_path(@medication)
         else
@@ -37,7 +35,6 @@ class MedicationsController < ApplicationController
     end
 
     def destroy
-        @medication = Medication.find_by_id(params[:id])
         @medication.destroy
         redirect_to medications_path
     end
@@ -46,5 +43,10 @@ class MedicationsController < ApplicationController
 
     def medication_params
         params.require(:medication).permit(:name, :dosage, :units, :frequency, :times_per_day, :start_date, :category_id, category_attributes: [:name])
+    end
+
+    def set_medication
+        @medication = Medication.find_by_id(params[:id])
+        redirect_to medications_path if !@medication
     end
 end
