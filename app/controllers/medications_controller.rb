@@ -23,6 +23,21 @@ class MedicationsController < ApplicationController
         @medication = Medication.find_by_id(params[:id])
     end
 
+    def update
+        @medication = Medication.find_by_id(params[:id])
+        if @medication.update(medication_params)
+            redirect_to medication_path(@medication)
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        @medication = Medication.find_by_id(params[:id])
+        @pet.destroy
+        redirect_to medications_path
+    end
+
     private
 
     def medication_params
