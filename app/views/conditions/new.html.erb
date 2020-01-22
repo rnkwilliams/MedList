@@ -1,10 +1,19 @@
-<h1>Add a Condition for <%= @condition.medication.name %></h1>
-
 
 <%= render partial: 'layouts/errors', locals: {object: @condition} %>
 
 
 <%= form_for @condition do |f| %>
+  
+    
+    <% if params[:medication_id] %>
+    <h1>Add a Condition for <%= @condition.medication.name %> - <%= @condition.medication.category.name %></h1>
+        <%= f.hidden_field :medication_id %>
+    <% else %>
+        <h1> Create a Condition </h1>
+        <%= f.label :medication_id, "Select a Medication" %>
+        <%= f.collection_select :medication_id, Medication.all, :id, :name, prompt: true %>
+    <% end %>
+    <br><br>
     <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -14,7 +23,6 @@
     <%= f.label :notes %>
     <%= f.text_area :notes %><br>
 
-    <%= f.hidden_field :medication_id %>
     <br><br>
 
     <%= f.submit 'Create Condition' %>

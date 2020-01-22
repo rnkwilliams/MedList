@@ -21,8 +21,7 @@ class ConditionsController < ApplicationController
     end
 
     def index
-        if params[:medication_id]
-            @medication = Medication.find_by_id(params[:medication_id])
+        if @medication = Medication.find_by_id(params[:medication_id])
             @conditions = @medication.conditions
         else
             @conditions = Condition.all
