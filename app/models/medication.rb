@@ -12,6 +12,8 @@ class Medication < ApplicationRecord
   validates :start_date, presence: true
   validate :not_a_duplicate
 
+  scope :alpha, -> {order(:medication)}
+
   def category_attributes=(attributes)
     self.category = Category.find_or_create_by(attributes) if !attributes['name'].empty?
     self.category
@@ -25,10 +27,6 @@ class Medication < ApplicationRecord
 
   def name_and_category
     "#{name} - #{category.name}"
-  end
-
-  def self.alpha
-    order(:medication)
   end
 
 end
