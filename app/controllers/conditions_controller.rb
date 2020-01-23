@@ -1,4 +1,6 @@
 class ConditionsController < ApplicationController
+    before_action :redirect_if_not_logged_in
+
     def new
         if @medication = Medication.find_by_id(params[:medication_id])
             @condition = @medication.conditions.build

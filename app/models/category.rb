@@ -4,7 +4,5 @@ class Category < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
 
-    def self.alpha
-        order(:medication)
-    end
+    scope :alpha -> {order(:name)}
 end
