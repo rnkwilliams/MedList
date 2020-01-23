@@ -23,4 +23,8 @@ class Medication < ApplicationRecord
     end
   end
 
+  def name_and_category
+    "#{name} - #{category.name}"
+  end
+
 end

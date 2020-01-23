@@ -11,7 +11,7 @@
     <% else %>
         <h1> Create a Condition </h1>
         <%= f.label :medication_id, "Select a Medication" %>
-        <%= f.collection_select :medication_id, Medication.all, :id, :name, prompt: true %>
+        <%= f.collection_select :medication_id, Medication.all, :id, :name_and_category, prompt: true %>
     <% end %>
     <br><br>
     <div>
