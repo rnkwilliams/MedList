@@ -27,4 +27,8 @@ class Medication < ApplicationRecord
     "#{name} - #{category.name}"
   end
 
+  def self.alpha
+    order(:medication)
+  end
+
 end
