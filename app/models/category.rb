@@ -4,5 +4,5 @@ class Category < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
 
-    scope :alpha -> {order(:name)}
+    scope :alpha, -> {order(:name)}
 end

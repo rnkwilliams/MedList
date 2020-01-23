@@ -2,6 +2,7 @@
 
 <ul>
 <% @conditions.each do |c| %>
-    <li><%= c.medication.name %>: <%= c.name %> - <%= c.notes %></li><br>
+    <li><strong><%= c.name %></strong> - <%= c.notes %><br> 
+        Medication Taking: <%= c.medication.name %></li><br>
 <% end %>
 </ul>

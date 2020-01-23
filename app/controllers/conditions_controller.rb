@@ -26,7 +26,7 @@ class ConditionsController < ApplicationController
         if @medication = Medication.find_by_id(params[:medication_id])
             @conditions = @medication.conditions
         else
-            @conditions = Condition.all
+            @conditions = Condition.where(:user_id => current_user.id)
         end
     end
 

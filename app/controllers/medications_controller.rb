@@ -3,7 +3,7 @@ class MedicationsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @medications = Medication.all
+        @medications = Medication.where(:user_id => current_user.id)
     end
 
     def new
