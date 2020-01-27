@@ -3,19 +3,19 @@
 
 <%= form_for @medication do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name %><br><br>
 
     <%= f.label :dosage %>
     <%= f.text_field :dosage %>
 
     <%= f.label :units %>
-    <%= f.text_field :units %><br>
+    <%= f.select(:units, ["cc", "ml", "gr", "mg", "mcg", "patch", "tsp", "tbsp", "Pills", "Drops", "Puffs", "Units", "Spray"], prompt: true) %><br><br>
 
     <%= f.label :frequency %>
-    <%= f.select(:frequency, ["As Needed", "Daily", "Every Other Day", "Specific Days"], prompt: true) %><br>
+    <%= f.select(:frequency, ["As Needed", "Daily", "Every Other Day", "Specific Days"], prompt: true) %><br><br>
 
     <%= f.label :times_per_day %>
-    <%= f.number_field :times_per_day, min:1, max:10 %><br>
+    <%= f.number_field :times_per_day, min:1, max:10 %><br><br>
 
     <%= f.label :start_date %>
     <%= f.date_field :start_date %>
