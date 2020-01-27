@@ -1,1 +1,6 @@
 <h1>Welcome <%= @user.username %>!</h1>
+<p> Please choose one of the following: </p>
+
+<%= link_to 'View Medications', medications_path %><br>
+<%= link_to 'Add a New Medical Condition', new_condition_path %><br>
+<%= link_to 'View All Medical Conditions', conditions_path %><br>
