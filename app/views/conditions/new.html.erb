@@ -12,8 +12,9 @@
         <h1> Create a Condition </h1>
         <%= f.label :medication_id, "Select a Medication" %>
         <%= f.collection_select :medication_id, Medication.alpha, :id, :name_and_category, prompt: true %>
+        <br><br>
     <% end %>
-    <br>
+
     <div>
     <%= f.label :name %>
     <%= f.text_field :name %>

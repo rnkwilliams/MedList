@@ -1,0 +1,37 @@
+<%= render partial: 'layouts/errors', locals: {object: @medication} %>
+
+<%= form_for @medication do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :dosage %>
+    <%= f.text_field :dosage %>
+
+    <%= f.label :units %>
+    <%= f.select(:units, ["cc", "ml", "gr", "mg", "mcg", "patch", "tsp", "tbsp", "Pills", "Drops", "Puffs", "Units", "Spray"], prompt: true) %><br><br>
+
+    <%= f.label :frequency %>
+    <%= f.select(:frequency, ["As Needed", "Daily", "Every Other Day", "Specific Days"], prompt: true) %><br><br>
+
+    <%= f.label :times_per_day %>
+    <%= f.number_field :times_per_day, min:1, max:10 %><br><br>
+
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date %>
+    <br><br>
+
+    <p> Select a Category that already exists: </p>
+    <div>
+    <%= f.collection_select :category_id, Category.alpha, :id, :name, prompt: true %>
+    </div>
+
+    <p> Or create a new Category: </p>
+    
+    <%= f.fields_for :category do |c| %>
+        <%= c.label :name %>
+        <%= c.text_field :name %>
+    <% end %>
+    <br><br>
+    <%= f.submit %>
+    
+<% end %>
