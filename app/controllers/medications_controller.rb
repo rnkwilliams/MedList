@@ -17,7 +17,7 @@ class MedicationsController < ApplicationController
         if @medication.save
             redirect_to medication_path(@medication)
         else
-            @medication = build_category
+            @medication.build_category
             render :new
         end
     end

@@ -1,7 +1,7 @@
 <h1> All Medications </h1>
 
+
 <% @medications.each do |m| %>
-    <h2><%= m.name %><strong> <%= m.dosage %></strong><strong><%= m.units %></strong> - <%= m.category.name %></h2> 
-    <%= link_to "View Details", medication_path(m) %>
-    <%= link_to "Add Medical Condition", new_medication_condition_path(m.id) %>
+    <h3><%= m.name %> <%= m.dosage %><%= m.units %> - <%= m.category.name %> 
+    <%= link_to "View Details", medication_path(m) %></h3>
 <% end %>

@@ -4,10 +4,11 @@
 <p><strong>Frequency: </strong><%= @medication.frequency %></p>
 <p><strong>Times Per Day: </strong><%= @medication.times_per_day %></p>
 <p><strong>Start Date: </strong><%= @medication.start_date %></p>
+<%= link_to "Add Medical Condition", new_medication_condition_path(@medication.id) %>
 <br><br>
-
+<br>
 <%= link_to "Edit Medication", edit_medication_path(@medication) %>
 <%= link_to "Delete Medication", medication_path(@medication), method: :delete %>
 <br><br>
-<%= link_to "Back to Medications", medications_path %>
+<%= link_to "All Medications", medications_path %>
 
