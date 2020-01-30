@@ -20,7 +20,8 @@ class Medication < ApplicationRecord
   end
 
   def not_a_duplicate
-    if Medication.find_by(name: name, category_id: category_id)
+    medication = Medication.find_by(name: name, category_id: category_id)
+    if !!medication && medication != self
       errors.add(:name, "has already been added for that category")
     end
   end

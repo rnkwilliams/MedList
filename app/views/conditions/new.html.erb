@@ -1,19 +1,10 @@
+<%= header_display(@condition) %>
 
 <%= render partial: 'layouts/errors', locals: {object: @condition} %>
 
 
-<%= form_for @condition do |f| %>
-  
-    
-    <% if params[:medication_id] %>
-    <h1>Add a Condition for <%= @condition.medication.name %> - <%= @condition.medication.category.name %></h1>
-        <%= f.hidden_field :medication_id %>
-    <% else %>
-        <h1> Create a Condition </h1>
-        <%= f.label :medication_id, "Select a Medication" %>
-        <%= f.collection_select :medication_id, Medication.alpha, :id, :name_and_category, prompt: true %>
-        <br><br>
-    <% end %>
+<%= form_for @condition do |f| %> 
+   
 
     <div>
     <%= f.label :name %>
