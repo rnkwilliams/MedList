@@ -1,10 +1,36 @@
-<% if logged_in? %>
-    <%= link_to 'Add Medication', new_medication_path %>
-    <%= link_to 'My Profile', user_path(current_user) %>
-    <%= link_to 'Log Out', logout_path, method: :delete %>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" <%= link_to 'MedList', root_path %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<% else %>
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'Sign Up', signup_path %>
-    <%= link_to 'Log In', login_path %>
-<% end %>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+
+    <% if logged_in? %>
+        <li class="nav-item active">
+        <a class="nav-link" <%= link_to 'Add Medication', new_medication_path %><span class="sr-only">(current)</span></a>   
+        </li>
+
+        <li class="nav-item active">
+        <a class="nav-link" <%= link_to 'My Profile', user_path(current_user) %><span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item active">
+        <a class="nav-link" <%= link_to 'Log Out', logout_path, method: :delete %><span class="sr-only">(current)</span></a>
+        </li>
+
+    <% else %>
+        <li class="nav-item active">
+        <a class="nav-link" <%= link_to 'Sign Up', signup_path %><span class="sr-only">(current)</span></a>   
+        </li>
+
+        <li class="nav-item active">
+        <a class="nav-link" <%= link_to 'Log In', login_path %><span class="sr-only">(current)</span></a>
+        </li>
+
+    <% end %>
+    
+    </ul>
+  </div>
+</nav>

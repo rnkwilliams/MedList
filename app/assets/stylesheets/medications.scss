@@ -1,3 +1,14 @@
 // Place all the styles related to the medications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.medications {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 60rem;
+    background: rgba(2, 2, 2, 0.514);
+    margin: auto;
+    border-radius: 10px;
+}

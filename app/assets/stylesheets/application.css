@@ -13,4 +13,22 @@
  *= require_tree .
  *= require_self
  */
- 
+
+ body {
+    background-image: url("https://cdn.pixabay.com/photo/2018/05/30/22/54/tablets-3442768_960_720.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5rem;
+  }
+  .login, .signup, .user-show{
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 40rem;
+    background: rgba(2, 2, 2, 0.514);
+    margin: auto;
+    border-radius: 10px;
+}
+  
+  

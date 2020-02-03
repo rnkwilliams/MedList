@@ -1,7 +1,11 @@
+
+<div class="medications">
 <h1> All Medications </h1>
+<br><br>
 
 
 <% @medications.each do |m| %>
     <h3><%= m.name %> <%= m.dosage %><%= m.units %> - <%= m.category.name %> 
     <%= link_to "View Details", medication_path(m) %></h3>
 <% end %>
+</div>
