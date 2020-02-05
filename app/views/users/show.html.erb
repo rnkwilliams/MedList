@@ -1,5 +1,7 @@
 <div class="user-show">
-<h1>Welcome <%= @user.username %>!</h1>
+<h1>Welcome <%= @user.username %>!</h1><br>
+
+<h4>You currently have <strong><%= @user.medications.count %></strong> medications listed.</h4><br>
 <p> Please choose one of the following: </p>
 
 <%= link_to 'View Medications', medications_path %><br>
