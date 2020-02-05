@@ -1,10 +1,12 @@
 <div class="conditions">
-<h1>All Medical Conditions</h1>
-
-<ul>
-<% @conditions.each do |c| %>
-    <li><strong><%= c.name %></strong> - <%= c.notes %><br> 
-        Medication Taking: <%= c.medication.name %></li><br>
-<% end %>
-</ul>
+    <h1>All Medical Conditions</h1><br>
+    
+    <ul>
+        <% @conditions.each do |c| %>
+            <li><strong><%= c.name %></strong> - <%= c.notes %><br> 
+                Medication Taking: <%= c.medication.name %></li><br>
+        <% end %>
+    </ul>
+    <br>
+    <%= link_to "Add Medical Condition", new_medication_condition_path(@medication.id) %>
 </div>
