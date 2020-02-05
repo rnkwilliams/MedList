@@ -5,6 +5,13 @@
 
 
 <%= form_for @condition do |f| %> 
+    <% if params[:medication_id] %>
+        <%= f.hidden_field :medication_id %>
+    <% else %>
+        <%= f.label :medication_id, "Select a Medication" %>
+        <%= f.collection_select :medication_id, Medication.alpha.where(:user_id => current_user.id), :id, :name_and_category, prompt: true %>
+        <br><br>
+    <% end %>
     <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -13,7 +20,7 @@
     
     <%= f.label :notes %>
     <%= f.text_area :notes %><br>
-    <%= f.hidden_field :medication_id %>
+    
     <br><br>
 
     <%= f.submit 'Create Condition' %>  
