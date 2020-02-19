@@ -7,6 +7,8 @@
     <p><strong>Start Date: </strong><%= @medication.start_date %></p>
 
     <%= link_to "View Conditions for This Medication", medication_conditions_path(@medication.id) %><br>
+    <%= link_to "Add Medical Condition", new_medication_condition_path(@medication.id) %>
+
     <br><br>
     <%= link_to "Edit Medication", edit_medication_path(@medication) %>
     <%= link_to "Delete Medication", medication_path(@medication), method: :delete %>

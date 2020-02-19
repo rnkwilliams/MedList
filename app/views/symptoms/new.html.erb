@@ -1,0 +1,7 @@
+<h1>Create a Symptom</h1>
+
+<%= form_for @symptom do |f| %>
+    <%= f.label :name, 'Symptom name' %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+<% end %>

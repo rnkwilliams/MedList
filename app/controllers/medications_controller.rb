@@ -4,6 +4,9 @@ class MedicationsController < ApplicationController
 
     def index
         @medications = Medication.alpha.where(:user_id => current_user.id)
+
+        @medications = @medications.search(params[:q].downcase) if params[:q] && !params[:q].empty?
+        #@medications = @medications.filter(params[:medication][:category_id]) if params[:medication] && params[:medication][:category_id]
     end
 
     def new

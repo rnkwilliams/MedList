@@ -20,6 +20,17 @@
         <a class="nav-link" <%= link_to 'Log Out', logout_path, method: :delete %><span class="sr-only">(current)</span></a>
         </li>
 
+        <%= form_tag("/medications", method: "get") do %>
+          <%= text_field_tag :q, params[:q], placeholder: "Search Medication"%>
+          <%= submit_tag("Search") %>
+        <% end %>
+        
+        # <%= form_tag("/medications", method: "get") do %>
+        #   <%= collection_select(:medication, :category_id, Category.all, :id, :name, prompt: 'Search by Category') %>
+        #   <%= submit_tag("Filter") %>
+        # <% end %>
+        
+
     <% else %>
         <li class="nav-item active">
         <a class="nav-link" <%= link_to 'Sign Up', signup_path %><span class="sr-only">(current)</span></a>   

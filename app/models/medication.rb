@@ -14,6 +14,14 @@ class Medication < ApplicationRecord
 
   scope :alpha, -> {order(:name)}
 
+  # def self.filter(params)
+  #   where("category_id = ?", params)
+  # end
+  
+  def self.search(params)
+    joins(:category).where("LOWER(medications.name) LIKE :term OR LOWER(categories.name) LIKE :term", term: "%#{params}%")
+  end
+ 
   def category_attributes=(attributes)
     self.category = Category.find_or_create_by(attributes) if !attributes['name'].empty?
     self.category
