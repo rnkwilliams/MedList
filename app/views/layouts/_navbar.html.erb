@@ -5,7 +5,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
 
     <% if logged_in? %>
         <li class="nav-item active">
@@ -20,15 +20,17 @@
         <a class="nav-link" <%= link_to 'Log Out', logout_path, method: :delete %><span class="sr-only">(current)</span></a>
         </li>
 
-        <%= form_tag("/medications", method: "get") do %>
-          <%= text_field_tag :q, params[:q], placeholder: "Search Medication"%>
-          <%= submit_tag("Search") %>
-        <% end %>
+        <div class="form-inline my-2 my-lg-0">
+          <%= form_tag("/medications", method: "get") do %>
+            <%= text_field_tag :q, params[:q], placeholder: "Search Medication"%>
+            <%= submit_tag("Search") %>
+          <% end %>
+        <div>
         
-        # <%= form_tag("/medications", method: "get") do %>
-        #   <%= collection_select(:medication, :category_id, Category.all, :id, :name, prompt: 'Search by Category') %>
-        #   <%= submit_tag("Filter") %>
-        # <% end %>
+         <%# form_tag("/medications", method: "get") do %>
+           <%# collection_select(:medication, :category_id, Category.all, :id, :name, prompt: 'Search by Category') %>
+           <%# submit_tag("Filter") %>
+         <%# end %>
         
 
     <% else %>

@@ -4,7 +4,7 @@
     <ul>
         <% @conditions.each do |c| %>
             <li><strong><%= c.name %></strong> - <%= c.notes %><br> 
-                Medication Taking: <%= c.medication.name %></li><br>
+                Medication: <strong><%= c.medication.name %></strong></li><br>
         <% end %>
     </ul>
     <br>
