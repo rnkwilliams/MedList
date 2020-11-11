@@ -1,9 +1,32 @@
 # MedList
 This app uses Ruby on Rails to manage related data through complex forms and RESTful routes. MedList is a Content Management System to keep track of all of your medications.
 
-## Usage
+# Demo 🖥
+[Click here for the demo!](https://drive.google.com/file/d/15ktgmWhcPM5qhv2z89pJiEILI7gZGXOg/view?usp=sharing)
 
-To use this app, just clone, run `rake db:migrate` run 'bundle install' and then run `rails s`.
+## Screenshots 📷
+
+![Alt text](./app/assets/images/MedList.jpg?raw=true "home")
+
+# Built With 🛠
+
+- [Ruby on Rails](https://rubyonrails.org/)
+- [Bootstrap](https://getbootstrap.com/)
+
+## Features :star2:
+
+- A full Ruby on Rails application developed using MVC design pattern.
+- Designed database schema and Active Record associations to create relationships between data.
+- Encrypted user’s credentials and implemented authorization using OAuth to ensure validated access to application.
+- Implemented user interface using Bootstrap framework for a simple-to-use application.
+
+## Getting Started :man_astronaut:
+
+1. Fork 🍴 and Star ⭐️ this repository
+2. `git clone` to your local directory 💻
+3. run `rake db:migrate`
+4. run `bundle install`
+5. run `rails s` :tada:
 
 ## Development
 
