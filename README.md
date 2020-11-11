@@ -24,9 +24,10 @@ This app uses Ruby on Rails to manage related data through complex forms and RES
 
 1. Fork 🍴 and Star ⭐️ this repository
 2. `git clone` to your local directory 💻
-3. run `rake db:migrate`
-4. run `bundle install`
-5. run `rails s` :tada:
+3. run `rake db:create`
+4. run `rake db:migrate`
+5. run `bundle install`
+6. run `rails s` :tada:
 
 ## Development
 
